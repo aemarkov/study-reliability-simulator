@@ -16,6 +16,7 @@ using GraphX.Controls;
 using GraphX.PCL.Common.Enums;
 using GraphX.PCL.Logic.Algorithms.LayoutAlgorithms;
 using GraphX.PCL.Logic.Algorithms.OverlapRemoval;
+using SimCore;
 using SimGui.Graph;
 
 namespace SimGui
@@ -35,6 +36,8 @@ namespace SimGui
             //Lets setup GraphArea settings
             GraphAreaExample_Setup();
 
+            IGraphParser parser = new SimpleGraphParser(0.001);
+            parser.OpenGraph("test1.csv");
         }
 
         private GraphExample GraphExample_Setup()
